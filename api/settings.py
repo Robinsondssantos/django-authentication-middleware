@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'api.barn',
     'api.device',
     'api.reading_smaai5',
+    'api.reading_smaai4',
+    'api.partner_device_permission',
 ]
 
 MIDDLEWARE = [

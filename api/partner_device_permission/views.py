@@ -2,7 +2,7 @@ from django.core.cache import cache
 from rest_framework import viewsets
 from rest_framework import filters
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
 from .models import PartnerDevicePermission
 from .serializers import PartnerDevicePermissionSerializer
 
@@ -10,7 +10,7 @@ from .serializers import PartnerDevicePermissionSerializer
 class PartnerDevicePermissionViewSet(viewsets.ModelViewSet):
     queryset = PartnerDevicePermission.objects.all()
     serializer_class = PartnerDevicePermissionSerializer
-    permission_class = (IsAuthenticated)
+    permission_class = (DjangoModelPermissions,)
 
     def list(self, request, *args, **kwargs):
         cached = cache.get('PartnerDevicePermission_UserId_{}'.format(request.user.id))

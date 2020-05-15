@@ -38,6 +38,7 @@ router.register(r'api/v2/partner/devicespermission', partner_device_permission_v
 
 urlpatterns = [
     path('', include(router.urls)),
+    # path(r'api/v2/partner/integrators', integrator_views.IntegratorViewSet.as_view()),
     path(r'api/v2/partner/reading_smaai4', reading_smaai4_views.ReadingSmaai4View.as_view()),
     path(r'api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),

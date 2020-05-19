@@ -40,7 +40,7 @@ urlpatterns = [
     path('', include(router.urls)),
     # path(r'api/v2/partner/integrators', integrator_views.IntegratorViewSet.as_view()),
     path(r'api/v2/partner/reading_smaai4', reading_smaai4_views.ReadingSmaai4View.as_view()),
-    path(r'api-auth/', include('rest_framework.urls')),
+    path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
     # path(r'api/', include('reading_smaai4.urls'))
 ]
